@@ -4,7 +4,7 @@ pragma solidity ^0.8.20;
 import {Script, console} from "forge-std/Script.sol";
 import {KartikCoin} from "../src/kartik-coin.sol";
 
-contract DeployKartikCoin is Script {
+contract Deploy is Script {
     function setUp() public {}
 
     function run() public {
