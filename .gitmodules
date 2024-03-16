@@ -1,0 +1,3 @@
+[submodule "kartik-coin/lib/forge-std"]
+	path = kartik-coin/lib/forge-std
+	url = https://github.com/foundry-rs/forge-std
