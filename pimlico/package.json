@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "permissionless": "^0.1.10",
+    "tslib": "^2.6.2",
+    "type": "module",
+    "viem": "^2.8.10"
+  }
+}
