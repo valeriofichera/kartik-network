@@ -62,6 +62,27 @@ export const quiz = {
           "correct": false
         }
       ]
+    },
+    {
+      "question": "Price goes up?",
+      "options": [
+        {
+          "answer": "Idk",
+          "correct": false
+        },
+        {
+          "answer": "Nah",
+          "correct": false
+        },
+        {
+          "answer": "Maybe",
+          "correct": false
+        },
+        {
+          "answer": "Pump eet",
+          "correct": true
+        }
+      ]
     }
     // Add more quiz objects as needed
   ]

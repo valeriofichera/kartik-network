@@ -16,15 +16,15 @@ const frameMetadata = getFrameMetadata({
       label: 'Start Quiz'
     }
   ],
-  image: `${NEXT_PUBLIC_URL}/park-1.png`,
-  post_url: `${NEXT_PUBLIC_URL}/api/quiz?currentQuestion=0`,
+  image: `${NEXT_PUBLIC_URL}/main.png`,
+  post_url: `${NEXT_PUBLIC_URL}/api/quiz?currentQuestion=0&answersCorrect=0`,
 });
 
 export const metadata: Metadata = {
-  title: 'Quiz',
+  title: 'Kartik Network',
   description: 'LFG',
   openGraph: {
-    title: 'Smart Account Frame Templatess',
+    title: 'Kartik Network',
     description: 'LFG',
     images: [`${NEXT_PUBLIC_URL}/main.png`],
   },
