@@ -12,7 +12,7 @@ export async function sendEthToBurnAddress(privateKey) {
     const burnAddress = "0x0000000000000000000000000000000000000000";
 
     // Specify amount of ETH to send (consider using units like "gwei" for smaller amounts)
-    const amountToSend = ethers.utils.parseUnits("0.00000001", "ether"); // 0.00000001 ETH
+    const amountToSend = ethers.parseUnits("0.00000001", "ether"); // 0.00000001 ETH
 
     // Create a transaction object
     const tx = {
