@@ -1,23 +1,27 @@
 import { ImageResponse } from "next/og";
 import Card from "./Card";
 import { NextRequest, NextResponse } from 'next/server';
+import url from "URL";
 
 export const dynamic = "force-dynamic";
 
 export async function GET(req: NextRequest) {
+
+  const requestBody = await req.json(); // To read request data
+
+  const queryParams = url.parse(req.url, true).query; 
   
-  // @ts-ignore
-  let question_string = req.nextUrl.searchParams?.questionString
+  // let encodedQuestionString = req.nextUrl.searchParams.get('questionString');
+
+  // if(!encodedQuestionString) throw new Error("No question string found")
+
+  // let questionString = decodeURIComponent(encodedQuestionString);
 
 
 
+  // console.log(req.nextUrl.searchParams, "req.nextUrl.searchParams")
 
-
-
-
-  console.log(question_string, "question_string api")
-
-  console.log(JSON.stringify(question_string), "questionString generate image api")
+  // console.log(JSON.stringify(questionString), "questionString generate image")
   
 
   const color = "#8a63d2"
@@ -31,7 +35,7 @@ export async function GET(req: NextRequest) {
             fontSize: 40,
           }}
         >
-          {question_string}
+          {queryParams}
         </h1>
         <div style={{ display: "flex", marginTop: "12" }}>
         </div>
