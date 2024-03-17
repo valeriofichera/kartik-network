@@ -33,7 +33,6 @@ export async function GET(req: NextRequest) {
           {questionString}
         </h1>
         <div style={{ display: "flex", marginTop: "12" }}>
-          {questionString}
         </div>
       </Card>
     ),
