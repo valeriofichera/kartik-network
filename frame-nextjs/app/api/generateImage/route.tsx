@@ -27,18 +27,18 @@ export async function GET(req: NextRequest) {
         <h1
           style={{
             color,
-            fontSize: 15,
+            fontSize: 24,
           }}
         >
-          {questionString}
+          {questionString.toString()}
         </h1>
         <div style={{ display: "flex", marginTop: "12" }}>
         </div>
       </Card>
     ),
     {
-      width: 800,
-      height: 420,
+      width: 1600,
+      height: 600,
     },
   );
 }
