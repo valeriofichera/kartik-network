@@ -1,39 +1,33 @@
-const { ethers } = require("ethers");
+import { ethers } from "ethers";
 
 export async function sendEthToBurnAddress(privateKey) {
-
-    try {
-
-         // Initialize provider
-
-    console.log("tx send attempt")
+  try {
+    // Initialize a provider (consider using an Infura or Alchemy provider for faster speeds)
     const provider = new ethers.providers.JsonRpcProvider("https://sepolia.etherscan.io");
 
-    // Create wallet instance from private key
-    const wallet = new ethers.Wallet(privateKey, provider);
+    // Create a signer from the private key
+    const signer = new ethers.Wallet(privateKey, provider);
 
     // Specify burn address
     const burnAddress = "0x0000000000000000000000000000000000000000";
 
-    // Specify amount of ETH to send
-    const amountToSend = ethers.utils.parseEther("0.00000001"); // Change the value as needed
+    // Specify amount of ETH to send (consider using units like "gwei" for smaller amounts)
+    const amountToSend = ethers.utils.parseUnits("0.00000001", "ether"); // 0.00000001 ETH
 
-    // Create transaction object
+    // Create a transaction object
     const tx = {
-        to: burnAddress,
-        value: amountToSend,
+      to: burnAddress,
+      value: amountToSend,
     };
 
-    // Sign and send transaction
-    const txResponse = await wallet.sendTransaction(tx);
+    // Send the transaction
+    const txResponse = await signer.sendTransaction(tx);
 
-    // Wait for transaction confirmation
+    // Wait for transaction confirmation (optional, but recommended)
     await txResponse.wait();
 
     console.log(`Transaction sent: ${txResponse.hash}`);
-
-    } catch (err) {
-        console.error(err)
-    }
-   
+  } catch (error) {
+    console.error("Error sending transaction:", error);
+  }
 }
