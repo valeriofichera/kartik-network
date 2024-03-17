@@ -6,7 +6,7 @@ export async function generateImage(question) {
 
   // const encodedQuestion = question !== null ? encodeURIComponent(encodedQuestion) : "";
 
-  const imageUrl = await `${NEXT_PUBLIC_URL}/api/generateImage?questionString=${question}`
+  const imageUrl = `${NEXT_PUBLIC_URL}/api/generateImage?questionString=${question}`
   
 
 
