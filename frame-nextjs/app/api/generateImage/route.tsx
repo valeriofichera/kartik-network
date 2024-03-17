@@ -6,9 +6,11 @@ export const dynamic = "force-dynamic";
 
 export async function GET(req: NextRequest) {
   
-  let currentQuestion = req.nextUrl.searchParams.get('currentQuestion');
+  let questionString = req.nextUrl.searchParams.get('questionString');
 
-  console.log(currentQuestion, "currentQuestion")
+  let decoded_questionString = decodeURIComponent(questionString)
+
+  console.log(decoded_questionString, "decoded_questionString")
   
 
   const color = "#8a63d2"
@@ -22,10 +24,10 @@ export async function GET(req: NextRequest) {
             fontSize: 15,
           }}
         >
-          {currentQuestion}
+          {decoded_questionString}
         </h1>
         <div style={{ display: "flex", marginTop: "12" }}>
-          {currentQuestion}
+          {decoded_questionString}
         </div>
       </Card>
     ),

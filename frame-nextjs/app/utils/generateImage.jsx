@@ -4,7 +4,9 @@ export async function generateImage(question) {
   
   // const imageData = await fetch(`${NEXT_PUBLIC_URL}/park-2.png`).then((res) => res.arrayBuffer());
 
-  const imageUrl = `${NEXT_PUBLIC_URL}/api/generateImage?currentQuestion=${question}`
+  const encodedQuestion = question !== null ? encodeURIComponent(encodedQuestion) : "";
+
+  const imageUrl = await `${NEXT_PUBLIC_URL}/api/generateImage?questionString=${encodedQuestion}`
   
 
 
