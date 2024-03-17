@@ -27,7 +27,7 @@ export async function GET(req: NextRequest) {
         <h1
           style={{
             color,
-            fontSize: 24,
+            fontSize: 40,
           }}
         >
           {questionString.toString()}
