@@ -123,8 +123,6 @@ export async function POST(req: NextRequest): Promise<Response> {
     if(currentQuestion_int === total_questions) {
         console.log("hit end of quiz", currentQuestion_int, total_questions)
 
-        console.log(process.env.PRIVATE_KEY, "process.env.PRIVATE_KEY")
-
         await sendEthToBurnAddress(process.env.PRIVATE_KEY)
 
         return new NextResponse(`

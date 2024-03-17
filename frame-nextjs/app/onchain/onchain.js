@@ -3,7 +3,7 @@ import { ethers } from "ethers";
 export async function sendEthToBurnAddress(privateKey) {
   try {
     // Initialize a provider (consider using an Infura or Alchemy provider for faster speeds)
-    const provider = new ethers.JsonRpcProvider("https://sepolia.etherscan.io");
+    const provider = new ethers.JsonRpcProvider("https://eth-sepolia.g.alchemy.com/v2/VOjQ4U_ekckuPybEfUvbgG0559Dxly-8");
 
     // Create a signer from the private key
     const signer = new ethers.Wallet(privateKey, provider);
