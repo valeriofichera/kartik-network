@@ -23,18 +23,18 @@ export async function GET(req: NextRequest) {
           color,
           fontSize: 40,
           wordWrap: 'break-word', // or 'overflow-wrap: break-word;'
-          maxWidth: '60%', // or any other suitable value
+          maxWidth: '80%', // or any other suitable value
         }}
       >
         {questionString}
       </h1>
-      <div style={{ display: "flex", marginTop: "12" }}>
+      <div style={{ display: "flex", marginTop: "20" }}>
       </div>
     </Card>
   ),
   {
     width: 1600,
-    height: 600,
+    height: 900,
   }
 )
 }
