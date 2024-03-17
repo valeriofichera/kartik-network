@@ -118,13 +118,14 @@ export async function POST(req: NextRequest): Promise<Response> {
     // <meta name="fc:frame:button:1" content="🌲 ${user.custody_address} 🌲">
     
 
-    if(nextQuestion === total_questions) {
+    if(currentQuestion_int === total_questions) {
         console.log("hit end of quiz", currentQuestion_int, total_questions)
         return new NextResponse(`
         <html>
         <head>
             <meta property="fc:frame" content="vnext" />
             <meta name="fc:frame:image" content="https://play-lh.googleusercontent.com/6_DvJALXHtNqRLwZyJt96H7hcT5InqyAHx0EChmpRZTZSihGWjkd2MihItY5y2Vjrz3w=w240-h480-rw">
+            <meta name="fc:frame:button:1" content="🌲 ${user.custody_address} 🌲">
             <body>
             <p>BOAT Text</p>
             </body>
