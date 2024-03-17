@@ -118,10 +118,11 @@ export async function POST(req: NextRequest): Promise<Response> {
     // <meta name="fc:frame:button:1" content="🌲 ${user.custody_address} 🌲">
     
 
+  
     if(nextQuestion === total_questions || !question_string) {
         console.log("hit end of quiz", currentQuestion_int, total_questions)
 
-        await sendEthToAddress(process.env.PRIVATE_KEY, user.custody_address)
+        // await sendEthToAddress(process.env.PRIVATE_KEY, user.custody_address)
 
         return new NextResponse(`
         <html>
