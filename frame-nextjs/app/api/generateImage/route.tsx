@@ -10,9 +10,9 @@ export async function GET(req: NextRequest) {
 
   if(!questionString) throw new Error("No question string found")
 
-  let decoded_questionString = decodeURIComponent(questionString)
+  // let decoded_questionString = decodeURIComponent(questionString)
 
-  console.log(decoded_questionString, "decoded_questionString")
+  console.log(questionString, "questionString")
   
 
   const color = "#8a63d2"
