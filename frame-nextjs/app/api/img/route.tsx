@@ -21,7 +21,9 @@ export async function GET(req: NextRequest) {
         <h1
           style={{
             color,
-            fontSize: 40,
+            fontSize: 20,
+            wordWrap: 'break-word', // or 'overflow-wrap: break-word;'
+            maxWidth: '100%', // or any other suitable value
           }}
         >
           {questionString}
@@ -35,4 +37,3 @@ export async function GET(req: NextRequest) {
       height: 600,
     },
   );
-}
