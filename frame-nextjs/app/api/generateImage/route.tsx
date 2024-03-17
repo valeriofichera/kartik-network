@@ -7,6 +7,8 @@ export const dynamic = "force-dynamic";
 export async function GET(req: NextRequest) {
   
   let currentQuestion = req.nextUrl.searchParams.get('currentQuestion');
+
+  console.log(currentQuestion, "currentQuestion")
   
 
   const color = "#8a63d2"
