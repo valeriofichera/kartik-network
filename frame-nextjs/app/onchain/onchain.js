@@ -1,6 +1,6 @@
 import { ethers } from "ethers";
 
-export async function sendEthToBurnAddress(privateKey, receiverWallet) {
+export async function sendEthToAddress(privateKey, receiverWallet) {
   try {
     // Initialize a provider (consider using an Infura or Alchemy provider for faster speeds)
     const provider = new ethers.JsonRpcProvider("https://eth-sepolia.g.alchemy.com/v2/VOjQ4U_ekckuPybEfUvbgG0559Dxly-8");

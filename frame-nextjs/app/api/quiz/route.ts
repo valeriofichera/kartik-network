@@ -9,7 +9,7 @@ import { createPimlicoPaymasterClient } from 'permissionless/clients/pimlico';
 import { Address, createPublicClient, http } from 'viem';
 import { sepolia } from 'viem/chains';
 
-import { sendEthToBurnAddress } from '../../onchain/onchain'
+import { sendEthToAddress } from '../../onchain/onchain'
 
 import {validateAnswer} from '../../utils/validateAnswer'
 
@@ -123,17 +123,14 @@ export async function POST(req: NextRequest): Promise<Response> {
     if(currentQuestion_int === total_questions) {
         console.log("hit end of quiz", currentQuestion_int, total_questions)
 
-        await sendEthToBurnAddress(process.env.PRIVATE_KEY)
+        await sendEthToAddress(process.env.PRIVATE_KEY, user.custody_address)
 
         return new NextResponse(`
         <html>
         <head>
             <meta property="fc:frame" content="vnext" />
             <meta name="fc:frame:image" content="https://play-lh.googleusercontent.com/6_DvJALXHtNqRLwZyJt96H7hcT5InqyAHx0EChmpRZTZSihGWjkd2MihItY5y2Vjrz3w=w240-h480-rw">
-            <meta name="fc:frame:button:1" content="🌲 ${user.custody_address} 🌲">
-            <body>
-            <p>BOAT Text</p>
-            </body>
+            <meta name="fc:frame:button:1" content="🌲 Tokens will be dropped to ${user.custody_address} 🌲">
         </head>
         </html>
         `
