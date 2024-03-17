@@ -7,6 +7,8 @@ export const generateFrameData =  async (quizNum, question_string, options_html)
 
   console.log(quizNum, "quizNum")
 
+  console.log(question_string, "question_string in framedata")
+
 
     return getFrameHtmlResponse({
         // buttons: [
