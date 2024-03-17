@@ -12,9 +12,9 @@ import "@openzeppelin/contracts/token/ERC20/extensions/ERC20Permit.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
 /// @custom:security-contact built at ETHGlobal London 2024
-contract KartikCoin is ERC20, ERC20Burnable, ERC20Permit, Ownable {
+contract ApeCoin is ERC20, ERC20Burnable, ERC20Permit, Ownable {
     constructor(address initialOwner)
-        ERC20("KartikCoin", "KRTK")
+        ERC20("ApeCoin", "APE")
         ERC20Permit("KartikCoin")
         Ownable(initialOwner)
     {

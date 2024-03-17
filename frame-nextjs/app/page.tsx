@@ -10,7 +10,6 @@ import KartikNFT from './components/KartikNFT';
 
 
 
-
 const frameMetadata = getFrameMetadata({
   buttons: [
     {
