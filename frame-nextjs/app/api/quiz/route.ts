@@ -103,7 +103,7 @@ export async function POST(req: NextRequest): Promise<Response> {
 
     const answer_valid = validateAnswer(quiz, currentQuestion_int, tapped_button)
 
-    console.log(answer_valid, tapped_button, question_string, "validateAnswer")
+    console.log(answer_valid, tapped_button, typeof(question_string), "validateAnswer")
 
 
 
