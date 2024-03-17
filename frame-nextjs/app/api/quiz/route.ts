@@ -106,7 +106,7 @@ export async function POST(req: NextRequest): Promise<Response> {
     const answer_valid = validateAnswer(quiz, currentQuestion_int, tapped_button)
 
     if(answer_valid) {
-      answersCorrect_int ++
+      answersCorrect_int++
     }
 
 
