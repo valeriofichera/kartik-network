@@ -30,7 +30,7 @@ export async function POST(req: NextRequest): Promise<Response> {
 
     const imageData = await fetch(`${NEXT_PUBLIC_URL}/park-2.png`).then((res) => res.arrayBuffer());
 
-    const component = (
+    const component = (`
     <div
     style={{
       display: 'flex',
@@ -64,7 +64,7 @@ export async function POST(req: NextRequest): Promise<Response> {
     </p>
   </div>
     
-  );
+  `);
 
   const options = {
     width: 1910,
