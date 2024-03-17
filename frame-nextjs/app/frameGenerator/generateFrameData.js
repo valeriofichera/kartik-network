@@ -1,5 +1,5 @@
 import { FrameRequest, getFrameHtmlResponse, getFrameMessage } from '@coinbase/onchainkit';
-import { NEXT_PUBLIC_URL } from '../config';
+import { NEXT_PUBLIC_URL } from '@/app/config';
 
 // import {generateSVG} from '../utils/generateSVG'
 
