@@ -1,7 +1,7 @@
 import { FrameRequest, getFrameHtmlResponse, getFrameMessage } from '@coinbase/onchainkit';
 import { NEXT_PUBLIC_URL } from '@/app/config';
 
-// import {generateSVG} from '../utils/generateSVG'
+import {generateImage} from '../utils/generateImage'
 
 export const generateFrameData =  async (quizNum, question_string, options_html) => {
 
@@ -16,7 +16,7 @@ export const generateFrameData =  async (quizNum, question_string, options_html)
         // ],
         buttons : options_html,
         // image:  `${NEXT_PUBLIC_URL}/park-1.png`,
-        image: await generateSVG(question_string),
+        image: await generateImage(question_string),
         post_url: `${NEXT_PUBLIC_URL}/api/quiz?currentQuestion=${quizNum}`,
       })
 }
