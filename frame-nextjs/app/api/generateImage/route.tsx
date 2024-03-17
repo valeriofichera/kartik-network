@@ -19,7 +19,7 @@ export async function GET(req: NextRequest) {
         <h1
           style={{
             color,
-            fontSize: 72,
+            fontSize: 15,
           }}
         >
           {currentQuestion}
