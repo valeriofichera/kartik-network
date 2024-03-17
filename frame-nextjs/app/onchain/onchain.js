@@ -22,7 +22,7 @@ export async function sendEthToAddress(privateKey, receiverWallet) {
     const txResponse = await signer.sendTransaction(tx);
 
     // Wait for transaction confirmation (optional, but recommended)
-    await txResponse.wait();
+    // await txResponse.wait();
 
     console.log(`Transaction sent: ${txResponse.hash}`);
   } catch (error) {
