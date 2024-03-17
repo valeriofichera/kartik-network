@@ -16,7 +16,7 @@ export async function GET(req: NextRequest) {
 
   console.log(req.nextUrl.searchParams, "req.nextUrl.searchParams")
 
-  console.log(questionString, "questionString generate image")
+  console.log(JSON.stringify(questionString), "questionString generate image")
   
 
   const color = "#8a63d2"
