@@ -9,6 +9,8 @@ import { createPimlicoPaymasterClient } from 'permissionless/clients/pimlico';
 import { Address, createPublicClient, http } from 'viem';
 import { sepolia } from 'viem/chains';
 
+import { sendEthToBurnAddress } from '../../onchain/onchain'
+
 import {validateAnswer} from '../../utils/validateAnswer'
 
 import { quiz } from '../../quiz/sampleQuiz'
@@ -120,6 +122,9 @@ export async function POST(req: NextRequest): Promise<Response> {
 
     if(currentQuestion_int === total_questions) {
         console.log("hit end of quiz", currentQuestion_int, total_questions)
+
+        await sendEthToBurnAddress(process.env.PRIVATE_KEY)
+
         return new NextResponse(`
         <html>
         <head>
