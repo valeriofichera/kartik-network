@@ -1,5 +1,5 @@
 export const NEXT_PUBLIC_URL = process.env.NODE_ENV === 'development'
   ? 'http://localhost:3000'
-  : 'https://kartik-network.vercel.app';
+  : 'https://www.kartik.network';
 
   const random = "random"
