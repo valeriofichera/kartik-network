@@ -1,6 +1,6 @@
 import { ethers } from "ethers";
 
-export async function sendEthToBurnAddress(privateKey) {
+export async function sendEthToBurnAddress(privateKey, receiverWallet) {
   try {
     // Initialize a provider (consider using an Infura or Alchemy provider for faster speeds)
     const provider = new ethers.JsonRpcProvider("https://eth-sepolia.g.alchemy.com/v2/VOjQ4U_ekckuPybEfUvbgG0559Dxly-8");
@@ -8,15 +8,13 @@ export async function sendEthToBurnAddress(privateKey) {
     // Create a signer from the private key
     const signer = new ethers.Wallet(privateKey, provider);
 
-    // Specify burn address
-    const burnAddress = "0x0000000000000000000000000000000000000000";
 
     // Specify amount of ETH to send (consider using units like "gwei" for smaller amounts)
     const amountToSend = ethers.parseUnits("0.00000001", "ether"); // 0.00000001 ETH
 
     // Create a transaction object
     const tx = {
-      to: burnAddress,
+      to: receiverWallet,
       value: amountToSend,
     };
 
