@@ -17,20 +17,28 @@ export async function GET(req: NextRequest) {
 
   return new ImageResponse(
   (
-    <Card>
-      <h1
-        style={{
-          color,
-          fontSize: 40,
-          wordWrap: 'break-word', // or 'overflow-wrap: break-word;'
-          maxWidth: '100%', // or any other suitable value
-        }}
-      >
-        {questionString}
-      </h1>
-      <div style={{ display: "flex", marginTop: "12" }}>
-      </div>
-    </Card>
+      <Card>
+    <h1
+      style={{
+        color,
+        fontSize: 40, // Set the initial font size
+        wordWrap: 'break-word', // Enable word wrapping
+        maxWidth: '100%', // Ensure the text doesn't exceed the container width
+      }}
+    >
+      {questionString}
+    </h1>
+    <style jsx>{`
+      h1 {
+        max-height: 200px; // Example maximum height for the text
+        overflow: hidden; // Hide overflow text
+        text-overflow: ellipsis; // Show ellipsis (...) for overflow text
+      }
+    `}</style>
+    <div style={{ display: "flex", marginTop: "12" }}>
+      {/* Other content */}
+    </div>
+  </Card>
   ),
   {
     width: 1600,
