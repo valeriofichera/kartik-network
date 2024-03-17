@@ -1,9 +1,6 @@
-import satori from 'satori'
 import {NEXT_PUBLIC_URL} from '../config'
 
-import sharp from 'sharp';
-
-export async function generateSVG(question) {
+export async function generateImage(question) {
   
   // const imageData = await fetch(`${NEXT_PUBLIC_URL}/park-2.png`).then((res) => res.arrayBuffer());
 
