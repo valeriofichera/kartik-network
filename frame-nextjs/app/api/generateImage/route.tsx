@@ -12,6 +12,8 @@ export async function GET(req: NextRequest) {
 
   // let decoded_questionString = decodeURIComponent(questionString)
 
+  console.log(req.nextUrl.searchParams, "req.nextUrl.searchParams")
+
   console.log(questionString, "questionString")
   
 
