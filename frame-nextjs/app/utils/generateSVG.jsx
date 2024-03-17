@@ -1,9 +1,12 @@
 import { ImageResponse } from 'next/og'
 import {NEXT_PUBLIC_URL} from '../config'
 
-export async function generateSVG(question, options) {
+import sharp from 'sharp';
+
+export async function generateSVG(question) {
   
   const imageData = await fetch(`${NEXT_PUBLIC_URL}/park-2.png`).then((res) => res.arrayBuffer());
+  
 
 
   
@@ -56,6 +59,13 @@ export async function generateSVG(question, options) {
     // ],
   }));
 
-  console.log(svg, "svg")
-  return svg;
+  const png = await sharp(Buffer.from(svg)).png().toBuffer();
+
+  return png;
+
+
+
+
+
+
 }
