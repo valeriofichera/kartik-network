@@ -10,7 +10,7 @@ export function generateImage(question_string) {
 
   console.log(encodedQuestion, "encodedQuestion")
 
-  const imageUrl = `${NEXT_PUBLIC_URL}/api/generateImage?questionString=${encodedQuestion}`
+  const imageUrl = `${NEXT_PUBLIC_URL}/api/img?questionString=${encodedQuestion}`
   
 
 
