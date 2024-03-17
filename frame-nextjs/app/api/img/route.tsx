@@ -6,17 +6,18 @@ export const dynamic = "force-dynamic";
 
 export async function GET(req: NextRequest) {
   
-  let encodedQuestionString = req.nextUrl.searchParams.get('questionString');
-
-  if(!encodedQuestionString) throw new Error("No question string found")
-
-  let questionString = decodeURIComponent(encodedQuestionString);
+  // @ts-ignore
+  let question_string = req.nextUrl.searchParams?.questionString
 
 
 
-  console.log(req.nextUrl.searchParams, "req.nextUrl.searchParams")
 
-  console.log(JSON.stringify(questionString), "questionString generate image")
+
+
+
+  console.log(question_string, "question_string api")
+
+  console.log(JSON.stringify(question_string), "questionString generate image api")
   
 
   const color = "#8a63d2"
@@ -30,7 +31,7 @@ export async function GET(req: NextRequest) {
             fontSize: 40,
           }}
         >
-          {questionString.toString()}
+          {question_string}
         </h1>
         <div style={{ display: "flex", marginTop: "12" }}>
         </div>
