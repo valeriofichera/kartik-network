@@ -45,11 +45,13 @@ export async function POST(req: NextRequest): Promise<Response> {
     }
 
     let currentQuestion = req.nextUrl.searchParams.get('currentQuestion');
+    let answersCorrect = req.nextUrl.searchParams.get('answersCorrect');
    
 
-    if(!currentQuestion) throw new Error("Missing search params")
+    if(!currentQuestion || !answersCorrect) throw new Error("Missing search params")
 
     let currentQuestion_int = parseInt(currentQuestion)
+    let answersCorrect_int = parseInt(answersCorrect)
 
     const nextQuestion = currentQuestion_int + 1
 
@@ -103,6 +105,10 @@ export async function POST(req: NextRequest): Promise<Response> {
 
     const answer_valid = validateAnswer(quiz, currentQuestion_int, tapped_button)
 
+    if(answer_valid) {
+      answersCorrect_int ++
+    }
+
 
 
     // console.log(total_questions, question_options)
@@ -129,7 +135,7 @@ export async function POST(req: NextRequest): Promise<Response> {
         <head>
             <meta property="fc:frame" content="vnext" />
             <meta name="fc:frame:image" content="https://play-lh.googleusercontent.com/6_DvJALXHtNqRLwZyJt96H7hcT5InqyAHx0EChmpRZTZSihGWjkd2MihItY5y2Vjrz3w=w240-h480-rw">
-            <meta name="fc:frame:button:1" content="🌲 Might get an airdrop to ${user.custody_address}.. at some point 🌲">
+            <meta name="fc:frame:button:1" content="🌲 ${answersCorrect_int} out of ${total_questions} 🌲">
         </head>
         </html>
         `
@@ -141,7 +147,7 @@ export async function POST(req: NextRequest): Promise<Response> {
   
     return new NextResponse(
       ///getFrameHtml here
-      await generateFrameData(nextQuestion, question_string, options_html)
+      await generateFrameData(nextQuestion, question_string, options_html, answersCorrect)
     );
   
   }

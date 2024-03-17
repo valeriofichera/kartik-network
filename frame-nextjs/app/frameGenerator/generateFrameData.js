@@ -3,7 +3,7 @@ import { NEXT_PUBLIC_URL } from '@/app/config';
 
 import {generateImage} from '../utils/generateImage'
 
-export const generateFrameData =  async (quizNum, question_string, options_html) => {
+export const generateFrameData =  async (quizNum, question_string, options_html, answersCorrect) => {
 
   console.log(quizNum, "quizNum")
 
@@ -19,7 +19,7 @@ export const generateFrameData =  async (quizNum, question_string, options_html)
         buttons : options_html,
         // image:  `${NEXT_PUBLIC_URL}/park-1.png`,
         image: generateImage(question_string),
-        post_url: `${NEXT_PUBLIC_URL}/api/quiz?currentQuestion=${quizNum}`,
+        post_url: `${NEXT_PUBLIC_URL}/api/quiz?currentQuestion=${quizNum}&answersCorrect=${answersCorrect}`,
       })
 }
 

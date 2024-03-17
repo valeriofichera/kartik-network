@@ -18,7 +18,7 @@ const frameMetadata = getFrameMetadata({
     }
   ],
   image: `${NEXT_PUBLIC_URL}/main.png`,
-  post_url: `${NEXT_PUBLIC_URL}/api/quiz?currentQuestion=0`,
+  post_url: `${NEXT_PUBLIC_URL}/api/quiz?currentQuestion=0&answersCorrect=0`,
 });
 
 export const metadata: Metadata = {
