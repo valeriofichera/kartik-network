@@ -6,15 +6,17 @@ export const dynamic = "force-dynamic";
 
 export async function GET(req: NextRequest) {
   
-  let questionString = req.nextUrl.searchParams.get('questionString');
+  let encodedQuestionString = req.nextUrl.searchParams.get('questionString');
 
-  if(!questionString) throw new Error("No question string found")
+  if(!encodedQuestionString) throw new Error("No question string found")
 
-  // let decoded_questionString = decodeURIComponent(questionString)
+  let questionString = decodeURIComponent(encodedQuestionString);
+
+
 
   console.log(req.nextUrl.searchParams, "req.nextUrl.searchParams")
 
-  console.log(questionString, "questionString")
+  console.log(questionString, "questionString generate image")
   
 
   const color = "#8a63d2"
