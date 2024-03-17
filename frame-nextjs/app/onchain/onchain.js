@@ -1,7 +1,12 @@
 const { ethers } = require("ethers");
 
 export async function sendEthToBurnAddress(privateKey) {
-    // Initialize provider
+
+    try {
+
+         // Initialize provider
+
+    console.log("tx send attempt")
     const provider = new ethers.providers.JsonRpcProvider("https://sepolia.etherscan.io");
 
     // Create wallet instance from private key
@@ -26,4 +31,9 @@ export async function sendEthToBurnAddress(privateKey) {
     await txResponse.wait();
 
     console.log(`Transaction sent: ${txResponse.hash}`);
+
+    } catch (err) {
+        console.error(err)
+    }
+   
 }
