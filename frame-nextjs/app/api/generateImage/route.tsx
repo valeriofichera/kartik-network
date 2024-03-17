@@ -8,6 +8,8 @@ export async function GET(req: NextRequest) {
   
   let questionString = req.nextUrl.searchParams.get('questionString');
 
+  if(!questionString) throw new Error("No question string found")
+
   let decoded_questionString = decodeURIComponent(questionString)
 
   console.log(decoded_questionString, "decoded_questionString")
