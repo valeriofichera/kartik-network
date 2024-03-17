@@ -4,11 +4,13 @@ export function generateImage(question_string) {
   
   // const imageData = await fetch(`${NEXT_PUBLIC_URL}/park-2.png`).then((res) => res.arrayBuffer());
 
-  // const encodedQuestion = question !== null ? encodeURIComponent(encodedQuestion) : "";
+  const encodedQuestion = question_string !== null ? encodeURIComponent(question_string) : "";
 
   console.log(question_string, "question_string before")
 
-  const imageUrl = `${NEXT_PUBLIC_URL}/api/generateImage?questionString=${question_string}`
+  console.log(encodedQuestion, "encodedQuestion")
+
+  const imageUrl = `${NEXT_PUBLIC_URL}/api/generateImage?questionString=${encodedQuestion}`
   
 
 
