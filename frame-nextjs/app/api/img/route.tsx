@@ -8,17 +8,19 @@ export async function GET(req: NextRequest) {
 
   const requestBody = await req.json(); // To read request data
   
-  let encodedQuestionString = req.nextUrl.searchParams.get('questionString');
+  // let encodedQuestionString = req.nextUrl.searchParams.get('questionString');
 
-  if(!encodedQuestionString) throw new Error("No question string found")
+  // if(!encodedQuestionString) throw new Error("No question string found")
 
-  let questionString = decodeURIComponent(encodedQuestionString);
+  // let questionString = decodeURIComponent(encodedQuestionString);
 
 
 
-  console.log(req.nextUrl.searchParams, "req.nextUrl.searchParams")
+  // console.log(req.nextUrl.searchParams, "req.nextUrl.searchParams")
 
-  console.log(JSON.stringify(questionString), "questionString generate image")
+  // console.log(JSON.stringify(questionString), "questionString generate image")
+
+  console.log(requestBody, "requestBody")
   
 
   const color = "#8a63d2"
@@ -32,7 +34,7 @@ export async function GET(req: NextRequest) {
             fontSize: 40,
           }}
         >
-          {questionString.toString()}
+          {requestBody}
         </h1>
         <div style={{ display: "flex", marginTop: "12" }}>
         </div>
