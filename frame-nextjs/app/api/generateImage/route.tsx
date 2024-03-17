@@ -26,10 +26,10 @@ export async function GET(req: NextRequest) {
             fontSize: 15,
           }}
         >
-          {decoded_questionString}
+          {questionString}
         </h1>
         <div style={{ display: "flex", marginTop: "12" }}>
-          {decoded_questionString}
+          {questionString}
         </div>
       </Card>
     ),
