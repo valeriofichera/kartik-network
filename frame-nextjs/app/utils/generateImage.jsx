@@ -1,4 +1,4 @@
-import { ImageResponse } from 'next/og'
+import satori from 'satori'
 import {NEXT_PUBLIC_URL} from '../config'
 
 import sharp from 'sharp';
