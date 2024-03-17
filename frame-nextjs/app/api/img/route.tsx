@@ -16,24 +16,25 @@ export async function GET(req: NextRequest) {
   const color = "#8a63d2"
 
   return new ImageResponse(
-    (
-      <Card>
-        <h1
-          style={{
-            color,
-            fontSize: 20,
-            wordWrap: 'break-word', // or 'overflow-wrap: break-word;'
-            maxWidth: '100%', // or any other suitable value
-          }}
-        >
-          {questionString}
-        </h1>
-        <div style={{ display: "flex", marginTop: "12" }}>
-        </div>
-      </Card>
-    ),
-    {
-      width: 1600,
-      height: 600,
-    },
-  );
+  (
+    <Card>
+      <h1
+        style={{
+          color,
+          fontSize: 20,
+          wordWrap: 'break-word', // or 'overflow-wrap: break-word;'
+          maxWidth: '100%', // or any other suitable value
+        }}
+      >
+        {questionString}
+      </h1>
+      <div style={{ display: "flex", marginTop: "12" }}>
+      </div>
+    </Card>
+  ),
+  {
+    width: 1600,
+    height: 600,
+  }
+)
+}
