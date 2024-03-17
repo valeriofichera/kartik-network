@@ -1,6 +1,6 @@
 import {NEXT_PUBLIC_URL} from '../config'
 
-export async function generateImage(question) {
+export function generateImage(question) {
   
   // const imageData = await fetch(`${NEXT_PUBLIC_URL}/park-2.png`).then((res) => res.arrayBuffer());
 
