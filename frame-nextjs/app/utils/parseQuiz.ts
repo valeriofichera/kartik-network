@@ -23,6 +23,6 @@ export function convertOptionstoHTML(options : any, quizNum : any) {
 }
 
 export function getQuestion(quizData : any, quizNum : any) {
-    return quizData.quizzes[quizNum]
+    return quizData.quizzes[quizNum].question
 }
 
